@@ -13,11 +13,13 @@ if __name__ == '__main__':
     # result.to_csv('data_edited.csv')
 
 
-    # line1 = chart.create_line('SMA 10' , color= 'red')
-    # line1.set(sma_data1)
+    line_min = chart.create_line('min' , color= '#073763')
+    line_min.set(df[['time',"min"]])
 
-    # line2 = chart.create_line('SMA 50' , color= 'green')
-    # line2.set(sma_data2)
+    line_max = chart.create_line('max' , color= '#073763')
+    line_max.set(df[['time',"max"]])
 
+    line_mid = chart.create_line('mid' , color= '#0b5394', style= 'dashed')
+    line_mid.set(df[['time',"mid"]])
 
     chart.show(block=True)
